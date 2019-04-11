@@ -238,10 +238,10 @@ database.ref().on("child_added", function (snapshot) {
     if (currentMelisandre === newMelisandrestatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Melisandrestatus, ") 
+        $(tdata4).append("Melisandre, ") 
     }
     else{
-        $(tdata5).append("Melisandrestatus, ")
+        $(tdata5).append("Melisandre, ")
     }
     if (currentBronn === newBronnstatus) {
         x++
