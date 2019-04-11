@@ -397,7 +397,7 @@ function createform() {
         $("#deathpool").append('<div id=' + characters[i] + ' class="form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter">' + charactersv2[i] + '</label> <select class="form-control" id="' + characters[i] + '-input"> <option>Alive</option> <option>Dead</option> <option>Night Walker</option> </select> </div>')
     }
 
-    $("#deathpool").append('<div id=' + characters[i] + ' class="form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter"> Bonus Question: Who will sit on the Iron Thron in the finale</label> <select class="form-control" id="iron-thron-input"> <option>John Snow</option> <option>Danerys Targerian</option> <option>Cercei Lannister</option> <option>Jamie Lannister</option> <option>Tyrion Lannister</option><option>Sansa Stark</option><option>Bran Stark</option><option>Varys</option><option>Melisandre</option><option>Other</option></select> </div>')
+    $("#deathpool").append('<div id=' + characters[i] + ' class="form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter"> Bonus Question: Who will sit on the Iron Thron in the finale</label> <select class="form-control" id="Iron-Throne-input"> <option>John Snow</option> <option>Danerys Targerian</option> <option>Cercei Lannister</option> <option>Jamie Lannister</option> <option>Tyrion Lannister</option><option>Sansa Stark</option><option>Bran Stark</option><option>Varys</option><option>Melisandre</option><option>Other</option></select> </div>')
 
     
     $("#deathpool").append('<button id="submit-button" type="submit" class="btn btn-primary my-1">Submit</button>')
@@ -478,7 +478,7 @@ $("#submit-button").on("click", (event) => {
     console.log(" Viserion Ice Dragon  is " + ViserionIceDragonstatus)
     console.log(" Rhaegal Yellow Dragon is " + RhaegalYellowDragonstatus)
     console.log(" Drogon Danys Dragon is " + DrogonDanysDragonstatus)
-    console.log(IronThronestatus + " sits on the Iron Throne")
+    console.log( IronThronestatus + " sits on the Iron Throne")
 
     database.ref().push({
         dbplayername: playername,
