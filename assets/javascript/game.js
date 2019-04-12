@@ -126,10 +126,10 @@ database.ref().on("child_added", function (snapshot) {
     if (currentCerseiLannister === newCerseiLannisterstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("CerseiLannister, ") 
+        $(tdata4).append("Cersei Lannister, ") 
     }
     else{
-        $(tdata5).append("CerseiLannister, ")
+        $(tdata5).append("Cersei Lannister, ")
     }
     if (currentJamieLannister === newJamieLannisterstatus) {
         x++
@@ -515,6 +515,8 @@ $("#submit-button").on("click", (event) => {
         dbDrogonDanysDragonstatus: DrogonDanysDragonstatus,
         dbIronThronestatus: IronThronestatus
     });
+
+    $("#deathpool").empty()
 })
 
 
