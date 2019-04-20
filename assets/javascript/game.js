@@ -12,6 +12,8 @@ var database = firebase.database();
 
 //Pull from Database
 
+var arrayofplayers = []
+
 database.ref().on("child_added", function (snapshot) {
     var newplayername = snapshot.val().dbplayername;
     var newJonSnowstatus = snapshot.val().dbJonSnowstatus;
@@ -47,307 +49,352 @@ database.ref().on("child_added", function (snapshot) {
     var newDrogonDanysDragonstatus = snapshot.val().dbDrogonDanysDragonstatus;
     var newIronThronestatus = snapshot.val().dbIronThronestatus
 
-    console.log(newplayername)
-    console.log(newJonSnowstatus)
-    console.log(newSansaStarkstatus)
-    console.log(newAryaStarkstatus)
-    console.log(newBranStarkstatus)
-    console.log(newCerseiLannisterstatus)
-    console.log(newJamieLannisterstatus)
-    console.log(newTyrionLannisterstatus)
-    console.log(newDanerysTargaryenstatus)
-    console.log(newYaraGreyjoystatus)
-    console.log(newTheonGreyjoystatus)
-    console.log(newTheHoundstatus)
-    console.log(newTheMountianstatus)
-    console.log(newJorahMormontstatus)
-    console.log(newTormnudGiantsbainestatus)
-    console.log(newBaricDondarrionstatus)
-    console.log(newSamwellTarlystatus)
-    console.log(newGillystatus)
-    console.log(newLittleSamstatus)
-    console.log(newVarysstatus)
-    console.log(newMelisandrestatus)
-    console.log(newBronnstatus)
-    console.log(newDavosSeasworthstatus)
-    console.log(newBrienneofTarthstatus)
-    console.log(newPodrickPaynestatus)
-    console.log(newGendrystatus)
-    console.log(newEuronGreyjoystatus)
-    console.log(newTheNightKingstatus)
-    console.log(newTheMounatianstatus)
-    console.log(newViserionIceDragonstatus)
-    console.log(newRhaegalYellowDragonstatus)
-    console.log(newDrogonDanysDragonstatus)
-    console.log(newIronThronestatus )
+    // console.log(newplayername)
+    // console.log(newJonSnowstatus)
+    // console.log(newSansaStarkstatus)
+    // console.log(newAryaStarkstatus)
+    // console.log(newBranStarkstatus)
+    // console.log(newCerseiLannisterstatus)
+    // console.log(newJamieLannisterstatus)
+    // console.log(newTyrionLannisterstatus)
+    // console.log(newDanerysTargaryenstatus)
+    // console.log(newYaraGreyjoystatus)
+    // console.log(newTheonGreyjoystatus)
+    // console.log(newTheHoundstatus)
+    // console.log(newTheMountianstatus)
+    // console.log(newJorahMormontstatus)
+    // console.log(newTormnudGiantsbainestatus)
+    // console.log(newBaricDondarrionstatus)
+    // console.log(newSamwellTarlystatus)
+    // console.log(newGillystatus)
+    // console.log(newLittleSamstatus)
+    // console.log(newVarysstatus)
+    // console.log(newMelisandrestatus)
+    // console.log(newBronnstatus)
+    // console.log(newDavosSeasworthstatus)
+    // console.log(newBrienneofTarthstatus)
+    // console.log(newPodrickPaynestatus)
+    // console.log(newGendrystatus)
+    // console.log(newEuronGreyjoystatus)
+    // console.log(newTheNightKingstatus)
+    // console.log(newTheMounatianstatus)
+    // console.log(newViserionIceDragonstatus)
+    // console.log(newRhaegalYellowDragonstatus)
+    // console.log(newDrogonDanysDragonstatus)
+    // console.log(newIronThronestatus )
 
 
     //Score keeping variable
     var x = 0
 
-    var tdata4 = $("<td>")
-    var tdata5 = $("<td>")
+    var tdata4 = []
+    var tdata5 = []
 
     if (currentJonSnow === newJonSnowstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("John Snow, ") 
+            tdata4.push(" John Snow") 
     }
     else{
-        $(tdata5).append("John Snow, ")
+        tdata5.push(" John Snow")
     }
 
     if (currentSansaStark === newSansaStarkstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Sansa Stark, ") 
+        tdata4.push(" Sansa Stark") 
     }
     else{
-        $(tdata5).append("Sansa Stark, ")
+        tdata5.push(" Sansa Stark")
     }
 
     if (currentAryaStark === newAryaStarkstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Arya Stark, ") 
+        tdata4.push(" Arya Stark") 
     }
     else{
-        $(tdata5).append("Arya Stark, ")
+        tdata5.push(" Arya Stark")
     }
 
     if (currentBranStark === newBranStarkstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Bran Stark, ") 
+        tdata4.push(" Bran Stark") 
     }
     else{
-        $(tdata5).append("Brank Stark, ")
+        tdata5.push(" Brank Stark")
     }
     if (currentCerseiLannister === newCerseiLannisterstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Cersei Lannister, ") 
+        tdata4.push(" Cersei Lannister") 
     }
     else{
-        $(tdata5).append("Cersei Lannister, ")
+        tdata5.push(" Cersei Lannister")
     }
     if (currentJamieLannister === newJamieLannisterstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Jamie Lannister, ") 
+        tdata4.push(" Jamie Lannister") 
     }
     else{
-        $(tdata5).append("Jamie Lannister, ")
+        tdata5.push(" Jamie Lannister")
     }
     if (currentTyrionLannister === newTyrionLannisterstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Tyrion Lannister, ") 
+        tdata4.push(" Tyrion Lannister") 
     }
     else{
-        $(tdata5).append("Tyrion Lannister, ")
+        tdata5.push(" Tyrion Lannister")
     }
     if (currentDanerysTargaryen === newDanerysTargaryenstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Danerys Targaryen, ") 
+        tdata4.push(" Danerys Targaryen") 
     }
     else{
-        $(tdata5).append("Danerys Targaryen, ")
+        tdata5.push(" Danerys Targaryen")
     }
     if (currentYaraGreyjoy === newYaraGreyjoystatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Yara Greyjoy, ") 
+        tdata4.push(" Yara Greyjoy") 
     }
     else{
-        $(tdata5).append("Yara Greyjoy, ")
+        tdata5.push(" Yara Greyjoy")
     }
     if (currentTheonGreyjoy === newTheonGreyjoystatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Theon Greyjoy, ") 
+        tdata4.push(" Theon Greyjoy") 
     }
     else{
-        $(tdata5).append("Theon Greyjoy, ")
+        tdata5.push(" Theon Greyjoy")
     }
     if (currentTheHound === newTheHoundstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("The Hound, ") 
+        tdata4.push(" The Hound") 
     }
     else{
-        $(tdata5).append("The Hound, ")
+        tdata5.push(" The Hound")
     }
     if (currentTheMountain === newTheMountianstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("The Mountain, ") 
+        tdata4.push(" The Mountain") 
     }
     else{
-        $(tdata5).append("The Mountain, ")
+        tdata5.push(" The Mountain")
     }
     if (currentJorahMormont === newJorahMormontstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Jorah Mormont, ") 
+        tdata4.push(" Jorah Mormont") 
     }
     else{
-        $(tdata5).append("Jorah Mormont, ")
+        tdata5.push(" Jorah Mormont")
     }
     if (currentTormundGiantsbane === newTormnudGiantsbainestatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Tormund Giantsbaine, ") 
+        tdata4.push(" Tormund Giantsbaine") 
     }
     else{
-        $(tdata5).append("Tormund Giantsbaine, ")
+        tdata5.push(" Tormund Giantsbaine")
     }
     if (currentSamwellTarly === newSamwellTarlystatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Samwell Tarley, ") 
+        tdata4.push(" Samwell Tarley") 
     }
     else{
-        $(tdata5).append("Samwell Tarley, ")
+        tdata5.push(" Samwell Tarley")
     }
     if (currentGilly === newGillystatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Gilly, ") 
+        tdata4.push(" Gilly") 
     }
     else{
-        $(tdata5).append("Gilly, ")
+        tdata5.push(" Gilly")
     }
     if (currentLittleSam === newLittleSamstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Little Sam, ") 
+        tdata4.push(" Little Sam") 
     }
     else{
-        $(tdata5).append("Little Sam, ")
+        tdata5.push(" Little Sam")
     }
     if (currentVarys === newVarysstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Varys, ") 
+        tdata4.push(" Varys") 
     }
     else{
-        $(tdata5).append("Varys, ")
+        tdata5.push(" Varys")
     }
     if (currentMelisandre === newMelisandrestatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Melisandre, ") 
+        tdata4.push(" Melisandre") 
     }
     else{
-        $(tdata5).append("Melisandre, ")
+        tdata5.push(" Melisandre")
     }
     if (currentBronn === newBronnstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Bronn, ") 
+        tdata4.push(" Bronn") 
     }
     else{
-        $(tdata5).append("Bronn, ")
+        tdata5.push(" Bronn")
     }
     if (currentDavosSeaworth === newDavosSeasworthstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Davos Seasworth, ") 
+        tdata4.push(" Davos Seasworth") 
     }
     else{
-        $(tdata5).append("Davos Seasworth, ")
+        tdata5.push(" Davos Seasworth")
     }
     if (currentBrienneofTarth === newBrienneofTarthstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Brienne of Tarth, ") 
+        tdata4.push(" Brienne of Tarth") 
     }
     else{
-        $(tdata5).append("Brienne of Tarth, ")
+        tdata5.push(" Brienne of Tarth")
     }
     if (currentPodrickPayne === newPodrickPaynestatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("The Podrick Payne, ") 
+        tdata4.push(" Podrick Payne") 
     }
     else{
-        $(tdata5).append("The Podrick Payne, ")
+        tdata5.push(" Podrick Payne")
     }
     if (currentGendry === newGendrystatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("The Gendry, ") 
+        tdata4.push(" Gendry") 
     }
     else{
-        $(tdata5).append("The Gendry, ")
+        tdata5.push(" Gendry")
     }
     if (currentEuronGreyjoy === newEuronGreyjoystatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("The Euron Greyjoy, ") 
+        tdata4.push(" Euron Greyjoy") 
     }
     else{
-        $(tdata5).append("The Euron Greyjoy, ")
+        tdata5.push(" Euron Greyjoy")
     }
     if (currentTheNightKing === newTheNightKingstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("The Night King, ") 
+        tdata4.push(" The Night King") 
     }
     else{
-        $(tdata5).append("The Night King, ")
+        tdata5.push(" The Night King")
     }
     if (currentViserionIceDragon === newViserionIceDragonstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("The Viserion Ice Dragon, ") 
+        tdata4.push(" Viserion Ice Dragon") 
     }
     else{
-        $(tdata5).append("The Viserion Ice Dragon, ")
+        tdata5.push(" Viserion Ice Dragon")
     }
     if (currentRhaegalYellowDragon === newRhaegalYellowDragonstatus) {
         x++
         console.log("your score:" + x)
-        $(tdata4).append("Rhaegal Yellow Dragonstatus, ") 
+        tdata4.push(" Rhaegal Yellow Dragonstatus") 
     }
     else{
-        $(tdata5).append("Rhaegal Yellow Dragonstatus, ")
+        tdata5.push(" Rhaegal Yellow Dragonstatus")
     }
     if (currentDrogonDanysDragon === newDrogonDanysDragonstatus) {
         x++
         console.log("your score:" + x)
-         $(tdata4).append("Drogon Dany's Dragon, ") 
+            tdata4.push(" Drogon Dany's Dragon") 
     }
     else{
-        $(tdata5).append("Drogon Dany's Dragon, ")
+        tdata5.push(" Drogon Dany's Dragon")
     }
     if (currentIronThrone === newIronThronestatus) {
         x++
         console.log("your score:" + x)
-         $(tdata4).append("Iron Throne, ") 
+            tdata4.push(" Iron Throne") 
     }
     else{
-        $(tdata5).append("Iron Throne, ")
+        tdata5.push(" Iron Throne")
     }
 
+var Player = {
+    playername : newplayername,
+    score : x,
+    correct : tdata4,
+    incorrect: tdata5,
+}
 
-       //Create a new row and store it in a variable
-       var row = $("<tr></tr>")
-   
-       var tdata1 = $("<td>" + newplayername + "</td>");
-       var tdata2 = $("<td>" + x + "</td>");
-       var tdata3 = $("<td class='text-center'> 1 </td>");
-   
-       //Append data boxes to row
-       row.append(tdata1, tdata2, tdata4, tdata5);
-   
-       //Append row to HTML
-       $("#tablebody").append(row);
+arrayofplayers.push(Player)
+console.log (arrayofplayers)
+arrayofplayers.sort((a, b) => b.score - a.score)
+console.log (arrayofplayers)
 
-
+    //    //Create a new row and store it in a variable
+    //    var row = $("<tr></tr>")
+   
+    //    var tdata1 = $("<td>" + newplayername + "</td>");
+    //    var tdata2 = $("<td>" + x + "</td>");
+    //    var tdata3 = $("<td class='text-center'> 1 </td>");
+   
+    //    //Append data boxes to row
+    //    row.append(tdata1, tdata2, tdata4, tdata5);
+   
+    //    //Append row to HTML
+    //    $("#tablebody").append(row);
 })
+
+var time = 2
+var interval;
+// Function to start timer
+function timer() {
+        clearInterval(interval);
+        interval = setInterval(decrement, 1000);
+    }
+    //  The lessen Function
+function decrement() {
+    //Decrease time by one
+    time--;
+    //  When you time = 0
+    if (time === 0) {
+        console.log ("yay")
+        for (var i = 0; i<arrayofplayers.length; i++){
+            var row = $("<tr></tr>")
+            var x = i + 1
+    
+            var tdata1 = $("<td>" + x + "</td>")
+            var tdata2 = $("<td>" + arrayofplayers[i].playername + "</td>")
+            var tdata3 = $("<td>" + arrayofplayers[i].score + "</td>")
+            var tdatac = $("<td>" + arrayofplayers[i].correct + "</td>")
+            var tdatai = $("<td>" + arrayofplayers[i].incorrect+ "</td>")
+    
+            row.append(tdata1, tdata2, tdata3, tdatac, tdatai);
+    
+            $("#tablebody").append(row)
+        }
+    }
+}
+
+timer()
+
+
+
 
 var currentJonSnow = "Alive"
 var currentSansaStark = "Alive"
@@ -386,6 +433,10 @@ var currentIronThrone = "Cercei Lannister"
 var characters = ["John-Snow", "Sansa-Stark", "Arya-Stark", "Bran-Stark", "Cersei-Lannister", "Jamie-Lannister", "Tyrion-Lannister", "Danerys-Targaryen", "Yara-Greyjoy", "Theon-Greyjoy", "The-Hound", "The-Mountain", "Jorah-Mormont", "Tormund-Giantsbane", "Baric-Dondarrion", "Samwell-Tarly", "Gilly", "Little-Sam", "Varys", "Melisandre", "Bronn", "Davos-Seaworth", "Brienne-of-Tarth", "Podrick-Payne", "Gendry", "Euron-Greyjoy", "The-Night-King", "Viserion-Ice-Dragon", "Rhaegal-Yellow-Dragon", "Drogon-Danys-Dragon"]
 
 var charactersv2 = ["John Snow", "Sansa Stark", "Arya Stark", "Bran Stark", "Cersei Lannister", "Jamie Lannister", "Tyrion Lannister", "Danerys Targaryen", "Yara Greyjoy", "Theon Greyjoy", "The Hound", "The Mountain", "Jorah Mormont", "Tormund Giantsbane", "Baric Dondarrion", "Samwell Tarly", "Gilly", "Little Sam", "Varys", "Melisandre", "Bronn", "Davos Seaworth", "Brienne of Tarth", "Podrick Payne", "Gendry", "Euron Greyjoy", "The Night King", "Viserion Ice Dragon", "Rhaegal Yellow Dragon", "Drogon Danys Dragon"]
+
+function dislaycurrent(){
+    
+}
 
 function createform() {
 
