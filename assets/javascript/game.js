@@ -359,6 +359,22 @@ console.log (arrayofplayers)
     //    //Append row to HTML
     //    $("#tablebody").append(row);
 })
+// .then(function() {
+//     for (var i = 0; i<arrayofplayers.length; i++){
+//         var row = $("<tr></tr>")
+//         var x = i + 1
+
+//         var tdata1 = $("<td>" + x + "</td>")
+//         var tdata2 = $("<td>" + arrayofplayers[i].playername + "</td>")
+//         var tdata3 = $("<td>" + arrayofplayers[i].score + "</td>")
+//         var tdatac = $("<td>" + arrayofplayers[i].correct + "</td>")
+//         var tdatai = $("<td>" + arrayofplayers[i].incorrect+ "</td>")
+
+//         row.append(tdata1, tdata2, tdata3, tdatac, tdatai);
+
+//         $("#tablebody").append(row)
+//     }
+// })
 
 var time = 2
 var interval;
@@ -405,25 +421,25 @@ var currentJamieLannister = "Alive"
 var currentTyrionLannister = "Alive"
 var currentDanerysTargaryen = "Alive"
 var currentYaraGreyjoy = "Alive"
-var currentTheonGreyjoy = "Alive"
+var currentTheonGreyjoy = "Dead"
 var currentTheHound = "Alive"
 var currentTheMountain = "Alive"
-var currentJorahMormont = "Alive"
+var currentJorahMormont = "Dead"
 var currentTormundGiantsbane = "Alive"
-var currentBaricDondarrion = "Alive"
+var currentBaricDondarrion = "Dead"
 var currentSamwellTarly = "Alive"
 var currentGilly = "Alive"
 var currentLittleSam = "Alive"
 var currentVarys = "Alive"
-var currentMelisandre = "Alive"
+var currentMelisandre = "Dead"
 var currentBronn = "Alive"
 var currentDavosSeaworth = "Alive"
 var currentBrienneofTarth = "Alive"
 var currentPodrickPayne = "Alive"
 var currentGendry = "Alive"
 var currentEuronGreyjoy = "Alive"
-var currentTheNightKing = "Night Walker"
-var currentViserionIceDragon = "Night Walker"
+var currentTheNightKing = "Dead"
+var currentViserionIceDragon = "Dead"
 var currentRhaegalYellowDragon = "Alive"
 var currentDrogonDanysDragon = "Alive"
 var currentIronThrone = "Cercei Lannister"
@@ -434,9 +450,11 @@ var characters = ["John-Snow", "Sansa-Stark", "Arya-Stark", "Bran-Stark", "Cerse
 
 var charactersv2 = ["John Snow", "Sansa Stark", "Arya Stark", "Bran Stark", "Cersei Lannister", "Jamie Lannister", "Tyrion Lannister", "Danerys Targaryen", "Yara Greyjoy", "Theon Greyjoy", "The Hound", "The Mountain", "Jorah Mormont", "Tormund Giantsbane", "Baric Dondarrion", "Samwell Tarly", "Gilly", "Little Sam", "Varys", "Melisandre", "Bronn", "Davos Seaworth", "Brienne of Tarth", "Podrick Payne", "Gendry", "Euron Greyjoy", "The Night King", "Viserion Ice Dragon", "Rhaegal Yellow Dragon", "Drogon Danys Dragon"]
 
-function dislaycurrent(){
+
+// function dislaycurrent(){
+//     var currentstatus = $("<div> John Snow: " + currentJonSnow + ", Sansa Stark: " + currentSansaStark + ", Arya Stark: " + currentAryaStark + ", Bran Stark: " + currentBranStark + ", Cersei Lanister: " + currentCerseiLannister + ", Jamie Lannister: " + currentJamieLannister + ", Tyrion Lannister: " + currentTyrionLannister + ", Danerys Targayen: " + currentDanerysTargaryen + ", Yara Greyjoy: " + currentYaraGreyjoy + ", Theon Greyjoy: " + currentTheonGreyjoy + ", The Hound:" + currentTheHound + ", The Mountain: " + currentTheMountain + ", Jorah Mormont: " + currentJorahMormont + ", Tormund Giantsbane: " + currentTormundGiantsbane + ", Baric Dondarion: ") 
     
-}
+// }
 
 function createform() {
 
