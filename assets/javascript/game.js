@@ -312,10 +312,10 @@ database.ref().on("child_added", function (snapshot) {
     if (currentRhaegalYellowDragon === newRhaegalYellowDragonstatus) {
         x++
         console.log("your score:" + x)
-        tdata4.push(" Rhaegal Yellow Dragonstatus") 
+        tdata4.push(" Rhaegal Yellow Dragon") 
     }
     else{
-        tdata5.push(" Rhaegal Yellow Dragonstatus")
+        tdata5.push(" Rhaegal Yellow Dragon")
     }
     if (currentDrogonDanysDragon === newDrogonDanysDragonstatus) {
         x++
@@ -441,8 +441,8 @@ var currentEuronGreyjoy = "Alive"
 var currentTheNightKing = "Dead"
 var currentViserionIceDragon = "Dead"
 var currentRhaegalYellowDragon = "Alive"
-var currentDrogonDanysDragon = "Alive"
-var currentIronThrone = "Cercei Lannister"
+var currentDrogonDanysDragon = "Dead"
+var currentIronThrone = "Cersei Lannister"
 
 
 
