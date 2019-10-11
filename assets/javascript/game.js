@@ -455,11 +455,11 @@ var charactersv2 = ["John Snow", "Sansa Stark", "Arya Stark", "Bran Stark", "Cer
 function createform() {
 
     console.log("Amazing")
-    $("#deathpool").append('<div class="form-group col-12"> <label for="playername">Your Name:</label> <textarea class="form-control" id="playername-input" rows="1"></textarea> </div>')
+    $("#deathpool").append('<div class="form-group col-12"> <label for="playername">Your Name:</label> <textarea class="corners form-control" id="playername-input" rows="1"></textarea> </div>')
     for (var i = 0; i < characters.length; i++) {
-        $("#deathpool").append('<div id=' + characters[i] + ' class="col-4 form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter">' + charactersv2[i] + '</label> <select class="form-control corners" id="' + characters[i] + '-input"> <option>Alive</option> <option>Dead</option> <option>Night Walker</option> </select> </div>')
+        $("#deathpool").append('<div id=' + characters[i] + ' class="col-12 col-md-4 form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter">' + charactersv2[i] + '</label> <select class="form-control corners" id="' + characters[i] + '-input"> <option>Alive</option> <option>Dead</option> <option>White Walker</option> </select> </div>')
     }
-    $("#deathpool").append('<div id=' + characters[i] + ' class="col-8 form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter"> Bonus Question: Who will sit on the Iron Thron in the finale</label> <select class="form-control" id="Iron-Throne-input"> <option>John Snow</option> <option>Danerys Targerian</option> <option>Cercei Lannister</option> <option>Jamie Lannister</option> <option>Tyrion Lannister</option><option>Sansa Stark</option><option>Bran Stark</option><option>Varys</option><option>Melisandre</option><option>Other</option></select> </div>')
+    $("#deathpool").append('<div id=' + characters[i] + ' class="col-8 form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter"> Bonus Question: Who will sit on the Iron Thron in the finale</label> <select class="form-control corners" id="Iron-Throne-input"> <option>John Snow</option> <option>Danerys Targerian</option> <option>Cercei Lannister</option> <option>Jamie Lannister</option> <option>Tyrion Lannister</option><option>Sansa Stark</option><option>Bran Stark</option><option>Varys</option><option>Melisandre</option><option>Other</option></select> </div>')
     $("#deathpool").append('<div class="col-4"> <button id="submit-button" type="submit" class="submitbttn btn btn-primary my-1">Submit</button> </div>')
 }
 
