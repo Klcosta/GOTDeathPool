@@ -1,0 +1,117 @@
+.sorry{
+    position: absolute;
+    bottom: 200px;
+    left: 25%;
+    transform: translateY(-50%);
+    background-color: white;
+    width: 50%;
+}
+
+.displayNone{
+    display:none;
+}
+
+.noScroll {
+    overflow: hidden;
+}
+
+.gotborder{
+    border-width: 6px;
+    border-style: solid;
+    border-image-source: url(../../border-diamonds.png);
+    border-image-slice: 180;
+    border-image-width: 8px;
+    border-image-repeat: round;
+    border-image-outset: 0px;
+    border-radius: 0px;
+}
+
+.bgImage{
+    background-image: url(../../gotBg.jpg);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    z-index: -10;
+}
+
+.font{
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.ellipsis{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 400px;
+    padding-right: 100px;
+}
+
+.floatright{
+    float:right
+}
+
+.translucentbackground{
+    background-color:rgba(255,255,255,0.9)
+}
+
+.morebutton{
+    background: none;
+    position: relative;
+    right: 10px;
+    cursor: pointer;
+}
+
+.submitbttn{
+    position:absolute;
+    bottom: 15px;
+    right: 15px;
+    background: none;
+    color: black;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0%;
+    cursor: pointer;
+
+}
+
+.pointer{
+    cursor: pointer !important;
+}
+
+.corners{
+    border-radius: 0% !important;
+}
+
+.header{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1200px){ 
+    .ellipsis{
+        max-width: 300px;
+    }
+
+}
+
+@media only screen and (max-width: 995px){ 
+    .ellipsis{
+        max-width: 200px;
+    }
+
+}
+
+@media only screen and (max-width: 775px){ 
+    .z{
+        display: none;
+    }
+
+}
+
+

@@ -397,8 +397,8 @@ function decrement() {
             var tdata1 = $("<td>" + x + "</td>")
             var tdata2 = $("<td>" + arrayofplayers[i].playername + "</td>")
             var tdata3 = $("<td>" + arrayofplayers[i].score + "</td>")
-            var tdatac = $("<td>" + arrayofplayers[i].correct + "</td>")
-            var tdatai = $("<td>" + arrayofplayers[i].incorrect+ "</td>")
+            var tdatac = $("<td id='"+[i]+"cp' class='ellipsis z'>" + arrayofplayers[i].correct + "<button id='"+[i]+"c'class='y morebutton pointer border-0 floatright' clicked='false'> Show More </button> </td>")
+            var tdatai = $("<td id='"+[i]+"ip' class='ellipsis z'>" + arrayofplayers[i].incorrect+ "<button id='"+[i]+"i'class='y morebutton pointer border-0 floatright'clicked='false'> Show More </button> </td>")
     
             row.append(tdata1, tdata2, tdata3, tdatac, tdatai);
     
@@ -409,45 +409,41 @@ function decrement() {
 
 timer()
 
-
-
-
 var currentJonSnow = "Alive"
 var currentSansaStark = "Alive"
 var currentAryaStark = "Alive"
 var currentBranStark = "Alive"
-var currentCerseiLannister = "Alive"
-var currentJamieLannister = "Alive"
+var currentCerseiLannister = "Dead"
+var currentJamieLannister = "Dead"
 var currentTyrionLannister = "Alive"
-var currentDanerysTargaryen = "Alive"
+var currentDanerysTargaryen = "Dead"
 var currentYaraGreyjoy = "Alive"
 var currentTheonGreyjoy = "Dead"
-var currentTheHound = "Alive"
-var currentTheMountain = "Alive"
+var currentTheHound = "Dead"
+var currentTheMountain = "Dead"
 var currentJorahMormont = "Dead"
 var currentTormundGiantsbane = "Alive"
 var currentBaricDondarrion = "Dead"
 var currentSamwellTarly = "Alive"
 var currentGilly = "Alive"
 var currentLittleSam = "Alive"
-var currentVarys = "Alive"
+var currentVarys = "Dead"
 var currentMelisandre = "Dead"
 var currentBronn = "Alive"
 var currentDavosSeaworth = "Alive"
 var currentBrienneofTarth = "Alive"
 var currentPodrickPayne = "Alive"
 var currentGendry = "Alive"
-var currentEuronGreyjoy = "Alive"
+var currentEuronGreyjoy = "Dead"
 var currentTheNightKing = "Dead"
 var currentViserionIceDragon = "Dead"
-var currentRhaegalYellowDragon = "Alive"
-var currentDrogonDanysDragon = "Dead"
-var currentIronThrone = "Cersei Lannister"
+var currentRhaegalYellowDragon = "Dead"
+var currentDrogonDanysDragon = "Alive"
+var currentIronThrone = "Bran Stark"
 
 
 
 var characters = ["John-Snow", "Sansa-Stark", "Arya-Stark", "Bran-Stark", "Cersei-Lannister", "Jamie-Lannister", "Tyrion-Lannister", "Danerys-Targaryen", "Yara-Greyjoy", "Theon-Greyjoy", "The-Hound", "The-Mountain", "Jorah-Mormont", "Tormund-Giantsbane", "Baric-Dondarrion", "Samwell-Tarly", "Gilly", "Little-Sam", "Varys", "Melisandre", "Bronn", "Davos-Seaworth", "Brienne-of-Tarth", "Podrick-Payne", "Gendry", "Euron-Greyjoy", "The-Night-King", "Viserion-Ice-Dragon", "Rhaegal-Yellow-Dragon", "Drogon-Danys-Dragon"]
-
 var charactersv2 = ["John Snow", "Sansa Stark", "Arya Stark", "Bran Stark", "Cersei Lannister", "Jamie Lannister", "Tyrion Lannister", "Danerys Targaryen", "Yara Greyjoy", "Theon Greyjoy", "The Hound", "The Mountain", "Jorah Mormont", "Tormund Giantsbane", "Baric Dondarrion", "Samwell Tarly", "Gilly", "Little Sam", "Varys", "Melisandre", "Bronn", "Davos Seaworth", "Brienne of Tarth", "Podrick Payne", "Gendry", "Euron Greyjoy", "The Night King", "Viserion Ice Dragon", "Rhaegal Yellow Dragon", "Drogon Danys Dragon"]
 
 
@@ -459,134 +455,166 @@ var charactersv2 = ["John Snow", "Sansa Stark", "Arya Stark", "Bran Stark", "Cer
 function createform() {
 
     console.log("Amazing")
-
-    $("#deathpool").append('<div class="form-group"> <label for="playername">Your Name:</label> <textarea class="form-control" id="playername-input" rows="1"></textarea> </div>')
-
+    $("#deathpool").append('<div class="form-group col-12"> <label for="playername">Your Name:</label> <textarea class="form-control" id="playername-input" rows="1"></textarea> </div>')
     for (var i = 0; i < characters.length; i++) {
-        $("#deathpool").append('<div id=' + characters[i] + ' class="form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter">' + charactersv2[i] + '</label> <select class="form-control" id="' + characters[i] + '-input"> <option>Alive</option> <option>Dead</option> <option>Night Walker</option> </select> </div>')
+        $("#deathpool").append('<div id=' + characters[i] + ' class="col-4 form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter">' + charactersv2[i] + '</label> <select class="form-control corners" id="' + characters[i] + '-input"> <option>Alive</option> <option>Dead</option> <option>Night Walker</option> </select> </div>')
     }
-
-    $("#deathpool").append('<div id=' + characters[i] + ' class="form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter"> Bonus Question: Who will sit on the Iron Thron in the finale</label> <select class="form-control" id="Iron-Throne-input"> <option>John Snow</option> <option>Danerys Targerian</option> <option>Cercei Lannister</option> <option>Jamie Lannister</option> <option>Tyrion Lannister</option><option>Sansa Stark</option><option>Bran Stark</option><option>Varys</option><option>Melisandre</option><option>Other</option></select> </div>')
-
-    
-    $("#deathpool").append('<button id="submit-button" type="submit" class="btn btn-primary my-1">Submit</button>')
+    $("#deathpool").append('<div id=' + characters[i] + ' class="col-8 form-group x" value=' + characters[i] + '> <label for="deathpoolcharacter"> Bonus Question: Who will sit on the Iron Thron in the finale</label> <select class="form-control" id="Iron-Throne-input"> <option>John Snow</option> <option>Danerys Targerian</option> <option>Cercei Lannister</option> <option>Jamie Lannister</option> <option>Tyrion Lannister</option><option>Sansa Stark</option><option>Bran Stark</option><option>Varys</option><option>Melisandre</option><option>Other</option></select> </div>')
+    $("#deathpool").append('<div class="col-4"> <button id="submit-button" type="submit" class="submitbttn btn btn-primary my-1">Submit</button> </div>')
 }
 
 createform()
 
+//Return Button
 
+$("#return").on("click", (event) => {
+    event.preventDefault();
+    $("#sorry").addClass("displayNone")
+    $("body").removeClass("noScroll")
+})
 
 //Submit Button
 
 $("#submit-button").on("click", (event) => {
     event.preventDefault();
-    var playername = $("#playername-input").val().trim();
-    var JonSnowstatus = $("#John-Snow-input").val();
-    var SansaStarkstatus = $("#Arya-Stark-input").val();
-    var BranStarkstatus = $("#Bran-Stark-input").val();
-    var AryaStarkstatus = $("#Arya-Stark-input").val();
-    var CerseiLannisterstatus = $("#Cersei-Lannister-input").val();
-    var JamieLannisterstatus = $("#Jamie-Lannister-input").val();
-    var TyrionLannisterstatus = $("#Tyrion-Lannister-input").val();
-    var DanerysTargaryenstatus = $("#Danerys-Targaryen-input").val();
-    var YaraGreyjoystatus = $("#Yara-Greyjoy-input").val();
-    var TheonGreyjoystatus = $("#Theon-Greyjoy-input").val();
-    var TheHoundstatus = $("#The-Hound-input").val();
-    var TheMountainstatus = $("#The-Mountain-input").val();
-    var JorahMormontstatus = $("#Jorah-Mormont-input").val();
-    var TormundGiantsbanestatus = $("#Tormund-Giantsbane-input").val();
-    var BaricDondarrionstatus = $("#Baric-Dondarrion-input").val();
-    var EuronGreyjoystatus = $("#Euron-Greyjoy-input").val();
-    var SamwellTarlystatus = $("#Samwell-Tarly-input").val();
-    var Gillystatus = $("#Gilly-input").val();
-    var LittleSamstatus = $("#Little-Sam-input").val();
-    var Varysstatus = $("#Varys-input").val();
-    var Melisandrestatus = $("#Melisandre-input").val();
-    var Bronnstatus = $("#Bronn-input").val()
-    var DavosSeaworthstatus = $("#Davos-Seaworth-input").val();
-    var BrienneofTarthstatus = $("#Brienne-of-Tarth-input").val();
-    var PodrickPaynestatus = $("#Podrick-Payne-input").val();
-    var Gendrystatus = $("#Gendry-input").val();
-    var EuronGreyjoystatus = $("#Euron-Greyjoy-input").val();
-    var TheNightKingstatus = $("#The-Night-King-input").val();
-    var ViserionIceDragonstatus = $("#Viserion-Ice-Dragon-input").val();
-    var RhaegalYellowDragonstatus = $("#Rhaegal-Yellow-Dragon-input").val();
-    var DrogonDanysDragonstatus = $("#Drogon-Danys-Dragon-input").val();
-    var IronThronestatus = $("#Iron-Throne-input").val();
+    
+    $("#sorry").removeClass("displayNone")
+    $(window).scrollTop(0);
+    $("body").addClass("noScroll")
 
 
-    console.log(playername)
-    console.log("John Snow is " + JonSnowstatus)
-    console.log(" Sansa Stark  is " + SansaStarkstatus)
-    console.log(" Bran Stark  is " + BranStarkstatus)
-    console.log(" Arya Stark  is " + AryaStarkstatus)
-    console.log(" Cersei Lannister  is " + CerseiLannisterstatus)
-    console.log(" Jamie Lannister is " + JamieLannisterstatus)
-    console.log(" Tyrion Lannister is " + TyrionLannisterstatus)
-    console.log(" Danerys Targaryen is " + DanerysTargaryenstatus)
-    console.log(" Yara Greyjoy is " + YaraGreyjoystatus)
-    console.log(" Theon Greyjoy  is " + TheonGreyjoystatus)
-    console.log(" The Hound is " + TheHoundstatus)
-    console.log(" The Mountain is " + TheMountainstatus)
-    console.log(" Jorah Mormont  is " + JorahMormontstatus)
-    console.log(" Tormund Giantsbane is " + TormundGiantsbanestatus)
-    console.log(" Baric Dondarrion is " + BaricDondarrionstatus)
-    console.log(" Euron Greyjoy is " + EuronGreyjoystatus)
-    console.log(" Samwell Tarley is " + SamwellTarlystatus)
-    console.log(" Gilly is " + Gillystatus)
-    console.log(" Little Sam is " + LittleSamstatus)
-    console.log(" Varys is " + Varysstatus)
-    console.log(" Melisandre  is " + Melisandrestatus)
-    console.log(" Bronn is " + Bronnstatus)
-    console.log(" Davos Seaworth  is " + DavosSeaworthstatus)
-    console.log(" Brienneof Tarth  is " + BrienneofTarthstatus)
-    console.log(" Podrick Payne is " + PodrickPaynestatus)
-    console.log(" Gendry is " + Gendrystatus)
-    console.log(" Euron Greyjoy  is " + EuronGreyjoystatus)
-    console.log(" The Night King  is " + TheNightKingstatus)
-    console.log(" Viserion Ice Dragon  is " + ViserionIceDragonstatus)
-    console.log(" Rhaegal Yellow Dragon is " + RhaegalYellowDragonstatus)
-    console.log(" Drogon Danys Dragon is " + DrogonDanysDragonstatus)
-    console.log( IronThronestatus + " sits on the Iron Throne")
 
-    database.ref().push({
-        dbplayername: playername,
-        dbJonSnowstatus: JonSnowstatus,
-        dbSansaStarkstatus: SansaStarkstatus,
-        dbBranStarkstatus: BranStarkstatus,
-        dbAryaStarkstatus: AryaStarkstatus,
-        dbCerseiLannisterstatus: CerseiLannisterstatus,
-        dbJamieLannisterstatus: JamieLannisterstatus,
-        dbTyrionLannisterstatus: TyrionLannisterstatus,
-        dbDanerysTargaryenstatus: DanerysTargaryenstatus,
-        dbYaraGreyjoystatus: YaraGreyjoystatus,
-        dbTheonGreyjoystatus: TheonGreyjoystatus,
-        dbTheHoundstatus: TheHoundstatus,
-        dbTheMountainstatus: TheMountainstatus,
-        dbJorahMormontstatus: JorahMormontstatus,
-        dbTormundGiantsbanestatus: TormundGiantsbanestatus,
-        dbBaricDondarrionstatus: BaricDondarrionstatus,
-        dbEuronGreyjoystatus: EuronGreyjoystatus,
-        dbSamwellTarlystatus: SamwellTarlystatus,
-        dbGillystatus: Gillystatus,
-        dbLittleSamstatus: LittleSamstatus,
-        dbVarysstatus: Varysstatus,
-        dbMelisandrestatus: Melisandrestatus,
-        dbBronnstatus: Bronnstatus,
-        dbDavosSeaworthstatus: DavosSeaworthstatus,
-        dbBrienneofTarthstatus: BrienneofTarthstatus,
-        dbPodrickPaynestatus: PodrickPaynestatus,
-        dbGendrystatus: Gendrystatus,
-        dbEuronGreyjoystatus: EuronGreyjoystatus,
-        dbTheNightKingstatus: TheNightKingstatus,
-        dbViserionIceDragonstatus: ViserionIceDragonstatus,
-        dbRhaegalYellowDragonstatus: RhaegalYellowDragonstatus,
-        dbDrogonDanysDragonstatus: DrogonDanysDragonstatus,
-        dbIronThronestatus: IronThronestatus
-    });
+    // var playername = $("#playername-input").val().trim();
+    // var JonSnowstatus = $("#John-Snow-input").val();
+    // var SansaStarkstatus = $("#Arya-Stark-input").val();
+    // var BranStarkstatus = $("#Bran-Stark-input").val();
+    // var AryaStarkstatus = $("#Arya-Stark-input").val();
+    // var CerseiLannisterstatus = $("#Cersei-Lannister-input").val();
+    // var JamieLannisterstatus = $("#Jamie-Lannister-input").val();
+    // var TyrionLannisterstatus = $("#Tyrion-Lannister-input").val();
+    // var DanerysTargaryenstatus = $("#Danerys-Targaryen-input").val();
+    // var YaraGreyjoystatus = $("#Yara-Greyjoy-input").val();
+    // var TheonGreyjoystatus = $("#Theon-Greyjoy-input").val();
+    // var TheHoundstatus = $("#The-Hound-input").val();
+    // var TheMountainstatus = $("#The-Mountain-input").val();
+    // var JorahMormontstatus = $("#Jorah-Mormont-input").val();
+    // var TormundGiantsbanestatus = $("#Tormund-Giantsbane-input").val();
+    // var BaricDondarrionstatus = $("#Baric-Dondarrion-input").val();
+    // var EuronGreyjoystatus = $("#Euron-Greyjoy-input").val();
+    // var SamwellTarlystatus = $("#Samwell-Tarly-input").val();
+    // var Gillystatus = $("#Gilly-input").val();
+    // var LittleSamstatus = $("#Little-Sam-input").val();
+    // var Varysstatus = $("#Varys-input").val();
+    // var Melisandrestatus = $("#Melisandre-input").val();
+    // var Bronnstatus = $("#Bronn-input").val()
+    // var DavosSeaworthstatus = $("#Davos-Seaworth-input").val();
+    // var BrienneofTarthstatus = $("#Brienne-of-Tarth-input").val();
+    // var PodrickPaynestatus = $("#Podrick-Payne-input").val();
+    // var Gendrystatus = $("#Gendry-input").val();
+    // var EuronGreyjoystatus = $("#Euron-Greyjoy-input").val();
+    // var TheNightKingstatus = $("#The-Night-King-input").val();
+    // var ViserionIceDragonstatus = $("#Viserion-Ice-Dragon-input").val();
+    // var RhaegalYellowDragonstatus = $("#Rhaegal-Yellow-Dragon-input").val();
+    // var DrogonDanysDragonstatus = $("#Drogon-Danys-Dragon-input").val();
+    // var IronThronestatus = $("#Iron-Throne-input").val();
 
-    $("#deathpool").empty()
+
+    // console.log(playername)
+    // console.log("John Snow is " + JonSnowstatus)
+    // console.log(" Sansa Stark  is " + SansaStarkstatus)
+    // console.log(" Bran Stark  is " + BranStarkstatus)
+    // console.log(" Arya Stark  is " + AryaStarkstatus)
+    // console.log(" Cersei Lannister  is " + CerseiLannisterstatus)
+    // console.log(" Jamie Lannister is " + JamieLannisterstatus)
+    // console.log(" Tyrion Lannister is " + TyrionLannisterstatus)
+    // console.log(" Danerys Targaryen is " + DanerysTargaryenstatus)
+    // console.log(" Yara Greyjoy is " + YaraGreyjoystatus)
+    // console.log(" Theon Greyjoy  is " + TheonGreyjoystatus)
+    // console.log(" The Hound is " + TheHoundstatus)
+    // console.log(" The Mountain is " + TheMountainstatus)
+    // console.log(" Jorah Mormont  is " + JorahMormontstatus)
+    // console.log(" Tormund Giantsbane is " + TormundGiantsbanestatus)
+    // console.log(" Baric Dondarrion is " + BaricDondarrionstatus)
+    // console.log(" Euron Greyjoy is " + EuronGreyjoystatus)
+    // console.log(" Samwell Tarley is " + SamwellTarlystatus)
+    // console.log(" Gilly is " + Gillystatus)
+    // console.log(" Little Sam is " + LittleSamstatus)
+    // console.log(" Varys is " + Varysstatus)
+    // console.log(" Melisandre  is " + Melisandrestatus)
+    // console.log(" Bronn is " + Bronnstatus)
+    // console.log(" Davos Seaworth  is " + DavosSeaworthstatus)
+    // console.log(" Brienneof Tarth  is " + BrienneofTarthstatus)
+    // console.log(" Podrick Payne is " + PodrickPaynestatus)
+    // console.log(" Gendry is " + Gendrystatus)
+    // console.log(" Euron Greyjoy  is " + EuronGreyjoystatus)
+    // console.log(" The Night King  is " + TheNightKingstatus)
+    // console.log(" Viserion Ice Dragon  is " + ViserionIceDragonstatus)
+    // console.log(" Rhaegal Yellow Dragon is " + RhaegalYellowDragonstatus)
+    // console.log(" Drogon Danys Dragon is " + DrogonDanysDragonstatus)
+    // console.log( IronThronestatus + " sits on the Iron Throne")
+
+    // database.ref().push({
+    //     dbplayername: playername,
+    //     dbJonSnowstatus: JonSnowstatus,
+    //     dbSansaStarkstatus: SansaStarkstatus,
+    //     dbBranStarkstatus: BranStarkstatus,
+    //     dbAryaStarkstatus: AryaStarkstatus,
+    //     dbCerseiLannisterstatus: CerseiLannisterstatus,
+    //     dbJamieLannisterstatus: JamieLannisterstatus,
+    //     dbTyrionLannisterstatus: TyrionLannisterstatus,
+    //     dbDanerysTargaryenstatus: DanerysTargaryenstatus,
+    //     dbYaraGreyjoystatus: YaraGreyjoystatus,
+    //     dbTheonGreyjoystatus: TheonGreyjoystatus,
+    //     dbTheHoundstatus: TheHoundstatus,
+    //     dbTheMountainstatus: TheMountainstatus,
+    //     dbJorahMormontstatus: JorahMormontstatus,
+    //     dbTormundGiantsbanestatus: TormundGiantsbanestatus,
+    //     dbBaricDondarrionstatus: BaricDondarrionstatus,
+    //     dbEuronGreyjoystatus: EuronGreyjoystatus,
+    //     dbSamwellTarlystatus: SamwellTarlystatus,
+    //     dbGillystatus: Gillystatus,
+    //     dbLittleSamstatus: LittleSamstatus,
+    //     dbVarysstatus: Varysstatus,
+    //     dbMelisandrestatus: Melisandrestatus,
+    //     dbBronnstatus: Bronnstatus,
+    //     dbDavosSeaworthstatus: DavosSeaworthstatus,
+    //     dbBrienneofTarthstatus: BrienneofTarthstatus,
+    //     dbPodrickPaynestatus: PodrickPaynestatus,
+    //     dbGendrystatus: Gendrystatus,
+    //     dbEuronGreyjoystatus: EuronGreyjoystatus,
+    //     dbTheNightKingstatus: TheNightKingstatus,
+    //     dbViserionIceDragonstatus: ViserionIceDragonstatus,
+    //     dbRhaegalYellowDragonstatus: RhaegalYellowDragonstatus,
+    //     dbDrogonDanysDragonstatus: DrogonDanysDragonstatus,
+    //     dbIronThronestatus: IronThronestatus
+    // });
+
+    $("#form").empty()
 })
+
+let newid = ""
+
+$(document).on('click', '.y', function (e) {
+    e.preventDefault();
+    console.log('this is the click');
+    console.log(this.id)
+    console.log($(this).attr("clicked"))
+    if ($(this).attr("clicked") === "false"){
+        $(this).attr("clicked", "true")
+        console.log(this) 
+        newid=this.id+"p"
+        console.log(newid)
+        $("#"+newid).removeClass("ellipsis")
+        $(this).html("Show Less")
+    }
+    else if ($(this).attr("clicked")==="true"){
+        $(this).attr("clicked", "false")
+        newid=this.id+"p"
+        $("#"+newid).addClass("ellipsis")
+        $(this).html("Show More")
+    }
+});
+
 
 
 
