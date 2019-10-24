@@ -1,3 +1,10 @@
+.gif{
+    /* margin-left: auto;
+    margin-right: auto; */
+    height: 45px;
+    margin: 10px;
+}
+
 .sorry{
     position: absolute;
     bottom: 200px;
